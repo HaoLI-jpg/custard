@@ -1,26 +1,39 @@
 import Loader from '../components/Loader'
-import { useUser } from '@auth0/nextjs-auth0';
-
+import {useEffect, useState} from 'react'
 
 export default function Home() {
 
-  const { user, error, isLoading } = useUser();
+  useEffect(() => {
+    getNotes()
+  }, [])
 
-  if (isLoading) return <Loader />
-  if (error) return <div>{error.message}</div>;
+  const [ApiRes, setApiRes] = useState(null)
+
+  const getNotes = async() => {
+    try {
+      const response = await fetch("/api/notes", {
+        method: "GET",
+        headers: {"Connection-Type": "application/json"},
+      })
+      setApiRes(await response.json())
+    } catch (error) {
+      console.log("error when read!!!!", error);
+    }
+  }
 
   return (
     <>
-      {user && (
-        <div>
-          <img src={user.picture} alt={user.name} />
-          <h2>{user.name}</h2>
-          <p>{user.email}</p>
-          <p>{JSON.stringify(user, null, 2)}</p>
-        </div>
-      )}
-      <h1>Hello world</h1>
+      <div>
+        {ApiRes?.map((album) => (
+          <div key={album.id}>
+            <li>{album.user}</li>
+            <li >{album.mbid}</li>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
+
+
 

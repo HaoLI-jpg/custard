@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <span className="font-semibold text-xl tracking-tight">Custard</span>
+        <span className="font-semibold text-xl tracking-tight"><a href="/">Custard</a></span>
       </div>
         
         <div className="container justify-between items-end w-auto">
@@ -31,7 +31,7 @@ export default function Navbar() {
                 </a>
                 <a
                 href="/api/auth/logout"
-                className="block rounded-md ml-4 mt-4 p-1 lg:inline-block lg:mt-0 text-teal-200 hover:text-white bg-indigo-500"
+                className="block rounded-md ml-4 mt-4 p-1 lg:inline-block lg:mt-0 text-teal-200 hover:text-white bg-teal-600 hover:bg-teal-700"
                 >
                 Log out
                 </a>

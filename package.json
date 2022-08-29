@@ -12,8 +12,10 @@
     "@auth0/nextjs-auth0": "^1.9.1",
     "@prisma/client": "^4.2.1",
     "next": "12.2.5",
+    "next-swagger-doc": "^0.3.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swagger-ui-react": "^4.14.0"
   },
   "devDependencies": {
     "@types/node": "18.7.13",
