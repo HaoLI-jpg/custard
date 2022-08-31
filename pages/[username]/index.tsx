@@ -12,7 +12,7 @@ export default function EnterPage({}) {
         <main>
         {user && (
             <div>
-            <img src={user.picture} alt={user.name} />
+            {/* <img src={user.picture} alt={user.name?} /> */}
             <h2>{user.name}</h2>
             <p>{user.email}</p>
             <p>{JSON.stringify(user, null, 2)}</p>
