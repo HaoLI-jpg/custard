@@ -54,9 +54,13 @@ export default function Home() {
         
         <div className="p-6 max-w-xl bg-white rounded-lg border m-auto border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
           <div className='flex justify-between'>
-            <a href={`/${ApiRes.user}`}>
-              <p className="mb-3 text-gray-500 dark:text-gray-400 hover:text-white">@{ApiRes.user} shared</p>
-            </a>
+            <div className='flex'>
+              <a href={`/${ApiRes.user}`}>
+                <p className="mb-3 text-gray-500 dark:text-gray-400 hover:text-white">@{ApiRes.user}</p>
+              </a>
+              <p className="mb-3 ml-1 text-gray-500 dark:text-gray-400"> shared</p>
+            </div>
+            
 
             <button
               className="mb-3"
@@ -72,6 +76,7 @@ export default function Home() {
                 </IconContext.Provider>
             </button>
           </div>
+          
           <div className='flex'>
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{ApiRes.data.title}</h5>
             <h5 className="m-1 mt-2 text-2sm font-bold tracking-tight text-gray-900 dark:text-gray-400">{ApiRes.data["first-release-date"]}</h5>
